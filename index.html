@@ -12,15 +12,20 @@
         <p>Expedientes de Alto Riesgo</p>
     </header>
     <main class="slider">
-        <button id="prev">⟨</button>
+        <button id="prev">&#10094;</button>
         
         <section class="viewer">
             <div class="counter" id="counter">
-                <article class="">
-
+                <article class="card active">
+                    <img id="img" src="" alt="">
+                    <h2 id="name"></h2>
+                    <p id="desc"></p>
+                    <div class="tags" id="tags"></div>
+                    <h3 id="reward"></h3>
                 </article>
             </div>
         </section>
+        <button id="next">&#10095;</button>
     </main>
     <script src="script.js"></script>
 </body>
