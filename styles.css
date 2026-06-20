@@ -5,9 +5,10 @@
 }
 
 body{
-    font-family:Arial;
+    font-family:Arial, Helvetica, sans-serif;
     background:#e0c79a;
     padding:2rem;
+    min-height:100vh;
 }
 
 header{
@@ -16,8 +17,12 @@ header{
 }
 
 header h1{
-    font-size:2.5rem;
+    font-size:clamp(2rem,4vw,3rem);
     letter-spacing:2px;
+}
+
+header p{
+    margin-top:.5rem;
 }
 
 .slider{
@@ -28,7 +33,8 @@ header h1{
 }
 
 .viewer{
-    width:420px;
+    width:100%;
+    max-width:500px;
     position:relative;
 }
 
@@ -37,21 +43,23 @@ header h1{
     border:8px solid #6b4226;
     padding:1rem;
     text-align:center;
-    opacity:0;
-    transform:scale(.95);
     transition:.3s;
-}
-
-.card.active{
-    opacity:1;
-    transform:scale(1);
 }
 
 .card img{
     width:100%;
-    height:320px;
+    height:400px;
     object-fit:cover;
     border:4px solid #3b2414;
+}
+
+.card h2{
+    margin:1rem 0 .5rem;
+}
+
+.card p{
+    margin:.5rem 0;
+    line-height:1.5;
 }
 
 .tags{
@@ -59,24 +67,30 @@ header h1{
     justify-content:center;
     gap:.5rem;
     flex-wrap:wrap;
-    margin:.5rem 0;
+    margin:1rem 0;
 }
 
 .tag{
-    padding:.3rem .7rem;
+    padding:.4rem .8rem;
     border-radius:20px;
     font-size:.8rem;
     background:#3b2414;
     color:white;
 }
 
-#prev, #next{
+#reward{
+    color:darkred;
+    margin-top:1rem;
+}
+
+#prev,
+#next{
     font-size:2rem;
     background:#6b4226;
     color:white;
     border:none;
-    width:50px;
-    height:50px;
+    width:55px;
+    height:55px;
     border-radius:50%;
     cursor:pointer;
 }
@@ -86,4 +100,22 @@ header h1{
     top:-30px;
     right:0;
     font-weight:bold;
+    font-size:1rem;
+}
+
+@media (max-width:768px){
+
+    .slider{
+        flex-direction:column;
+    }
+
+    .card img{
+        height:300px;
+    }
+
+    #prev,
+    #next{
+        width:50px;
+        height:50px;
+    }
 }
